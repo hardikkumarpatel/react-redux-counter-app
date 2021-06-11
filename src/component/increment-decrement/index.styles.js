@@ -17,7 +17,7 @@ const styles = theme => ({
       width: '30%',
       fontSize: '20px',
       marginTop: '1em',
-      background: '#2F5597',
+      background: '#BA353D',
       borderRadius: '10px'
       },
       buttonStyles1: {
@@ -26,7 +26,7 @@ const styles = theme => ({
       fontSize: '20px',
       marginTop: '1em',
       marginLeft: '3%',
-      background: '#2F5597',
+      background: '#BA353D',
       borderRadius: '10px'
       },
       buttonStyles2: {
@@ -35,7 +35,7 @@ const styles = theme => ({
       fontSize: '20px',
       marginTop: '1em',
       marginLeft: '3%',
-      background: '#2F5597',
+      background: '#BA353D',
       borderRadius: '10px'
       },
       h3: {

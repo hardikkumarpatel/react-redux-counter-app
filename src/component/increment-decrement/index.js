@@ -5,20 +5,21 @@ import React from "react";
 import { Component } from "react";
 import { connect } from 'react-redux';
 import styles from './index.styles';
-import FavoriteIcon from '@material-ui/icons/Favorite';
+import SrcVectore from '../../assets/vector/vector.gif'
+import loveVector from '../../assets/vector/953-love.gif';
 const classNames = require('classnames');
 
 const StateHeading = ({ classes }) => {
   return(
     <div>
-       <h2 className={classNames(classes.h3)}>Made with Love <FavoriteIcon color="primary" style={{ fontSize: '35px' }}/> in React.</h2>
+       <h2 className={classNames(classes.h3)}>Made with Love <img src={loveVector} height="30" width="30" alt=""/> in React.</h2>
        <h2 className={classNames(classes.h3)}>React Redux Counter App</h2>
     </div>
   )
 };
-const Decrement = ({ classes, handleDecrement}) => {
+const Decrement = ({ classes, handleDecrement, count}) => {
   return(
-    <Button variant="contained" color="primary" className={classNames(classes.buttonStyles)} onClick={handleDecrement}> - </Button>
+    <Button variant="contained" color="primary" className={classNames(classes.buttonStyles)} onClick={handleDecrement} disabled={count === 0}>  - </Button>
   )
 };
 const CountStateValue = ({ classes, count }) => {
@@ -35,7 +36,7 @@ const ChildElement = ({ classes, count, decrement, encrement }) => {
   return(
     <div>
         <StateHeading classes={classes}/>
-        <Decrement classes={classes} handleDecrement={decrement}/>
+        <Decrement classes={classes} handleDecrement={decrement} count={count}/>
         <CountStateValue classes={classes} count={count}/>
         <Increment classes={classes} handleIncrement={encrement}/>
     </div>
@@ -48,6 +49,9 @@ const ParentElement = ({ classes, count, decrement, encrement }) => {
          <div className={classNames(classes.buttonDiv)}>
             <ChildElement classes={classes} count={count} decrement={decrement} encrement={encrement} />
          </div>
+      </div>
+      <div style={{ marginTop:'-10%', justifyContent: 'center', display:'flex'}}>
+        <img src={SrcVectore} alt=""/>
       </div>
     </Paper>
   )
